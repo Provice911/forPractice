@@ -1,0 +1,23 @@
+body {
+  /*background-color: #222222;*/
+}
+#mainClockBlock {
+  /*background-color: red;
+  width: 10px;
+  height: 10px; */
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-family: 'Consolas';
+  font-size: 70pt;
+  /*color: red;*/
+  text-shadow: 0px 0px 10px 10px black;
+}
+#HT {
+  color: #8a8a8a;
+}
+.clock {
+  text-shadow: 0px 0px 1px #ffffff;
+}

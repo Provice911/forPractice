@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>timetable</title>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <script src="storage.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body onload="onLoad()">
+    <input type="button" value="refresh" onclick="location.reload()" autofocus>
+    <div id="timesheetBody">
+      <div id="day"></div>
+      <hr />
+      <div id="timesheetCurrentLesson">
+        <div id="currentLessonBlock">
+          <div id="currentLesson">текущий_предмет</div> <sup style="font-size: 10pt;" id="typeCurrentLesson">лек.</sup>
+          <div id="progressBarBorder">
+            <div id="progressBarBody"></div>
+          </div>
+          <div id="info">
+            <div id="cabCurrentLesson">каб</div>
+            <div id="leftTime">осталось  1:30</div>
+          </div>
+          <p></p>
+          <div id="nameTeacher">Харченко Александр Валентинович</div>
+          <hr />
+        </div>
+        <div id="timeSheetList">
+          <div id="FLesson">
+            <div id="timeF" class="timesheetPoint"></div><div id="nameTeacherF" hidden></div><div id="lessonNameF" class="timesheetPoint"></div><sup style="font-size: 9pt;" id="typeLessonF"></sup><div id="cabinetF" class="timesheetPoint"></div>
+          </div>
+          <div id="SLesson">
+            <div id="timeS" class="timesheetPoint"></div><div id="nameTeacherS" hidden></div><div id="lessonNameS" class="timesheetPoint"></div><sup style="font-size: 9pt;" id="typeLessonS"></sup><div id="cabinetS" class="timesheetPoint"></div>
+          </div>
+          <div id="TLesson">
+            <div id="timeT" class="timesheetPoint"></div><div id="nameTeacherT" hidden></div><div id="lessonNameT" class="timesheetPoint"></div><sup style="font-size: 9pt;" id="typeLessonT"></sup><div id="cabinetT" class="timesheetPoint"></div>
+          </div>
+          <div id="FoLesson">
+            <div id="timeFo" class="timesheetPoint"></div><div id="nameTeacherFo" hidden></div><div id="lessonNameFo" class="timesheetPoint"></div><sup style="font-size: 9pt;" id="typeLessonFo"></sup><div id="cabinetFo" class="timesheetPoint"></div>
+          </div>
+          <div id="FiLesson">
+            <div id="timeFi" class="timesheetPoint"></div><div id="nameTeacherFi" hidden></div><div id="lessonNameFi" class="timesheetPoint"></div><sup style="font-size: 9pt;" id="typeLessonFi"></sup><div id="cabinetFi" class="timesheetPoint"></div>
+          </div>
+          <div id="noLesson" class="timesheetPoint" style="display: none">Занятий нет</div>
+        </div>
+        <!-- <hr /> -->
+      </div>
+    </div>
+    <script type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+Color this clock based on current time (used ex. '#111111'). Idea from game HackNet.

@@ -125,7 +125,7 @@ var cltLength = eval(clt).length;
 
 if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(clt)[cltLength - 1][2], eval(clt)[cltLength - 1][3], date.getSeconds()) <= date)) {
     dayOfWeek++;
-    if (dayOfWeek >= 6) {
+    if (dayOfWeek > 6) {
         dayOfWeek = 0;
         if (week % 2 == 0) {
             downWeekFiller();

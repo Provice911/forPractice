@@ -125,9 +125,10 @@ var cltLength = eval(clt).length;
 
 if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(clt)[cltLength - 1][2], eval(clt)[cltLength - 1][3], date.getSeconds()) <= date)) {
     dayOfWeek++;
-    if (dayOfWeek >= 6) {
+    if (dayOfWeek > 6) {
         dayOfWeek = 0;
-        if (week % 2 == 0) {
+		//console.log('test');
+        if (week % 2 != 0) {
             downWeekFiller();
             //alert("Четная"); //ЧЁТНАЯ, Т.Е. !НИЖНЯЯ!
         } else {
@@ -137,7 +138,7 @@ if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(clt)[clt
     }
 }
 //============================================================================//
-if (week % 2 != 0) {
+if (week % 2 == 0) {
     downWeekFiller();
     //alert("Четная"); //ЧЁТНАЯ, Т.Е. !НИЖНЯЯ!
 } else {
@@ -238,43 +239,15 @@ function newFiller(key, updown) {
         eval(lessonOrder[o] + 'Lesson').style.display = '';
     }
 
-
-
-    //сделать перебор через цикл
-
-    //currentFiller(countLessonsToday);
-    //progressBar(countLessonsToday);
-
-    // for (var i = 0; i <= countLessonsToday; i++) {
-    // //     if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[i][0], eval(jumper)[i][1], date.getSeconds())
-    // // <= date && date <=
-    // // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[i][2], eval(jumper)[i][3], date.getSeconds()))
-    // // && timeF.innerText != '')
-    // //     {
-    //     console.log('inForm ' + i);
-        
-    //         currentFiller(i);
-    //         progressBar(i);
-    //         currentLessonBlock.hidden = false;
-    // //    } else {
-    //         //currentLessonBlock.hidden = true;
-    // //    }
-    // }
     var localFix;
     for (var i = 0; i <= clt - 1; i++) {
         if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[clt - 1][2], eval(jumper)[clt - 1][3], date.getSeconds())
         <= date)) {
             localFix = 0;
-            //console.log('LF '+ 0);
-            //console.log((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[clt - 1][2], eval(jumper)[clt - 1][3], date.getSeconds())
-            //<= date));
             
             
         } else {
             localFix = 1;
-            //console.log('LF '+ 1);
-            //console.log((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[clt - 1][2], eval(jumper)[clt - 1][3], date.getSeconds())
-            //<= date));
         }
 
         if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[i][0], eval(jumper)[i][1], date.getSeconds())
@@ -309,55 +282,6 @@ function newFiller(key, updown) {
             //console.log('check 3 localFix: ' + localFix);
         }
     }
-    // if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[0][0], eval(jumper)[0][1], date.getSeconds())
-    // <= date && date <=
-    // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[0][2], eval(jumper)[0][3], date.getSeconds()))
-    // && timeF.innerText != '')
-    // {
-    //     currentFiller(1);
-    //     progressBar(1);
-    //     currentLessonBlock.hidden = false;
-    // }
-    // else if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[1][0], eval(jumper)[1][1], date.getSeconds())
-    // <= date && date <=
-    // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[1][2], eval(jumper)[1][3], date.getSeconds()))
-    // && timeS.innerText != '')
-    // {
-    //     currentFiller(2);
-    //     progressBar(2);
-    //     currentLessonBlock.hidden = false;
-    // }
-    // else if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[2][0], eval(jumper)[2][1], date.getSeconds())
-    // <= date && date <=
-    // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[2][2], eval(jumper)[2][3], date.getSeconds()))
-    // && timeT.innerText != '')
-    // {
-    //     currentFiller(3);
-    //     progressBar(3);
-    //     currentLessonBlock.hidden = false;
-    // }
-    // else if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[3][0], eval(jumper)[3][1], date.getSeconds())
-    // <= date && date <=
-    // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[3][2], eval(jumper)[3][3], date.getSeconds()))
-    // && timeFo.innerText != '')
-    // {
-    //     currentFiller(4);
-    //     progressBar(4);
-    //     currentLessonBlock.hidden = false;
-    // }
-    // else if ((new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[4][0], eval(jumper)[4][1], date.getSeconds())
-    // <= date && date <=
-    // new Date(date.getFullYear(), date.getMonth(), date.getDate(), eval(jumper)[4][2], eval(jumper)[4][3], date.getSeconds()))
-    // && timeFi.innerText != '')
-    // {
-    //     currentFiller(5);
-    //     progressBar(5);
-    //     currentLessonBlock.hidden = false;
-    // }
-    // else
-    // {
-    //     currentLessonBlock.hidden = true;
-    // }
 
     function progressBar(key) {
 
@@ -399,30 +323,3 @@ function newFiller(key, updown) {
         }
     }
 }
-
-//              'F, S, T, Fo' 'xx:xx'
-// function filler(lessonCount, time, lessonName, typeLesson, cabinet) {
-
-// var RTime = 'time' + lessonCount;
-// var RLessonName = 'lessonName' + lessonCount;
-// var RTypeLesson = 'typeLesson' + lessonCount;
-// var RCabinet = 'cabinet' + lessonCount;
-// var RNameTecaher = 'nameTeacher' + lessonCount;
-
-// eval(RTime).innerText = time;
-// eval(RLessonName).innerText = lessonList[lessonName][0];
-// eval(RNameTecaher).innerText = lessonList[lessonName][1];
-// eval(RTypeLesson).innerText = typeLessons[typeLesson];
-// eval(RCabinet).innerText = numCabs[cabinet];
-// }
-
-
-
-
-
-// function downlClick() {
-// var link = document.createElement('a');
-// link.setAttribute('href','!script.js');
-// link.setAttribute('download','!script.js');
-// onload = link.click();
-// }
